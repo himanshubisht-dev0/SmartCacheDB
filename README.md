@@ -38,28 +38,6 @@ SmartCacheDB supports the following Redis-compatible commands:
 
 Data is automatically dumped to `dump.my_rdb` on graceful shutdown (e.g., Ctrl+C) and is loaded from this file at startup. This ensures data durability across server restarts.
 
-## Repository Structure
-
-```
-├── include/                # Public headers
-│   ├── RedisCommandHandler.h
-│   ├── RedisDatabase.h
-│   ├── RedisServer.h
-│   ├── AdaptivePredictiveCache.h      # Predictive cache header
-│   └── ThreadPool.h                   # Thread pool header
-├── src/                    # Implementation files
-│   ├── RedisCommandHandler.cpp
-│   ├── RedisDatabase.cpp
-│   ├── RedisServer.cpp
-│   ├── AdaptivePredictiveCache.cpp    # APC implementation
-│   ├── ThreadPool.cpp                 # Thread pool implementation
-│   └── main.cpp            # Entry point
-├── Concepts,UseCases&Tests.md    # Design concepts and command use cases
-├── Makefile                # Build rules
-├── README.md               # This documentation
-└── test_all.sh             # Bash script for all tests
-```
-
 ## Installation
 
 This project uses a simple Makefile. Ensure you have a C++17 (or later) compliant compiler (like g++).
